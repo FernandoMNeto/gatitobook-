@@ -8,7 +8,15 @@ import { NovoUsuario } from './novo-usuario';
 })
 export class NovoUsuarioService {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
+  cadastrarNovoUsuario(novoUsuario: NovoUsuario) {
+    return this.httpClient.post('http://localhost:3000/user/signup', novoUsuario);
+  }
+
+
+  verificarUsuarioExistente(nomeUsuarip: string) {
+    return this.httpClient.get(`http://localhost:3000/user/exists/${nomeUsuarip}`);
+  }
 
 }
