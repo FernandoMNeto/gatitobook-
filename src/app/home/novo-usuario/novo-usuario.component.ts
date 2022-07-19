@@ -50,9 +50,9 @@ export class NovoUsuarioComponent implements OnInit {
       this.service.cadastrarNovoUsuario(novoUsuario).subscribe(() => {
         this.router.navigate([''])
       },
-      (error) => {
-        console.log(error);
-      }
+        (error) => {
+          console.log(error);
+        }
       )
     }
 
